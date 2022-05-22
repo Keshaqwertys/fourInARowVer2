@@ -3,7 +3,7 @@ package com.example.fourinarow;
 import java.util.ArrayList;
 
 public class Field {
-    public class Slot { //private
+    public class Slot {
         int posX;
         int posY;
 
@@ -137,7 +137,7 @@ public class Field {
         }
         return null;
     }
-    private Slot searchSlot(int position){ //Пока не нужен
+    private Slot searchSlot(int position){ //Пока не нужен (думаю и не потребуется)
         switch (position) {
             case 11 -> {
                 return slot11;
@@ -166,6 +166,19 @@ public class Field {
         result.add(list5);
         result.add(list6);
         result.add(list7);
+        return result;
+    }
+
+    public ArrayList<Slot> getMatrix(){
+        ArrayList<ArrayList<Field.Slot>> arrayLines = getAllLines();
+        ArrayList<Field.Slot> result = new ArrayList<>();
+        int count = 0;
+        while (count != 6){
+            for (ArrayList<Field.Slot> lines : arrayLines) {
+                result.add(lines.get(count));
+            }
+            count++;
+        }
         return result;
     }
 }
