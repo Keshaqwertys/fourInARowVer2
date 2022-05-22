@@ -196,7 +196,7 @@ public class ForInController {
                     findButton(line, count).setStyle(grayChip);
                     System.out.println("<id> " + findButton(line,count).getId()); // выводит id кнопки/слота на котором находится
                     try {
-                        Thread.sleep(200);  //просто делает паузу на 200 млскнд
+                        Thread.sleep(50);  //
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
