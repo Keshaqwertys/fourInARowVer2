@@ -229,6 +229,9 @@ public class ForInController {
             }
         }
         checkStatus();
+        if (findOutIfThereIsAPlace(list) == -1){
+            checkForDraw();
+        }
     }
 
     protected int findOutIfThereIsAPlace(ArrayList<Field.Slot> line){
@@ -438,6 +441,32 @@ public class ForInController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
 
+        }
+    }
+
+    private void checkForDraw(){
+        ArrayList<Field.Slot> matrix = mainField.getMatrix();
+        ArrayList<Integer> topLine = getHorizontalLinesFromMatrix(matrix).get(0);
+        boolean allFilled = true;
+        for (Integer cell: topLine){
+            if (cell == -1) {
+                allFilled = false;
+                break;
+            }
+        }
+        if (allFilled){
+            FXMLLoader draw = new FXMLLoader();
+            gameStatus = false;
+            draw.setLocation(getClass().getResource("greenWins.fxml"));
+            try {
+                draw.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root = draw.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
         }
     }
 
