@@ -137,25 +137,6 @@ public class Field {
         }
         return null;
     }
-    private Slot searchSlot(int position){ //Пока не нужен (думаю и не потребуется)
-        switch (position) {
-            case 11 -> {
-                return slot11;
-            }
-            case 12 -> {
-                return slot12;
-            }
-            case 13 -> {
-                return slot13;
-            }
-            case 14 -> {
-                return slot14;
-            }
-            default -> {
-                return defaultSlot;
-            }
-        }
-    }
 
     public ArrayList<ArrayList<Slot>> getAllLines(){
         ArrayList<ArrayList<Slot>> result = new ArrayList<>();
