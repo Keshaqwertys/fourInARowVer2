@@ -10,6 +10,12 @@ module com.example.fourinarow {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.example.fourinarow to javafx.fxml;
-    exports com.example.fourinarow;
+    opens View to javafx.fxml;
+    exports Model;
+    opens Model to javafx.fxml;
+    exports Controller;
+    exports View;
+    opens Controller to javafx.fxml;
+
+
 }
